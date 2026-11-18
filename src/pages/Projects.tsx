@@ -3,31 +3,53 @@ import Ol_edu from "../assets/Ol_edu.png"
 import SplendEng from "../assets/SplendEng.jpeg"
 import TravelVoyage from "../assets/TravelVoyage.jpeg"
 import ChessyGrill from "../assets/ChessyGrill.jpeg"
+import QA_manual from "../assets/QA_manual.avif"
 
 import { FaGithub } from "react-icons/fa"
 
 const projects = [
   {
     id: 1,
+    title: " Ecommerce-qa-testing",
+    subtitle: "Manual Testing",
+    category: "QA",
+    description:
+      "Manual QA testing project focused on test planning, test case design, and execution for an e-commerce web application, covering functional testing, defect identification, test documentation, and software quality assurance.",
+    // stack: ["React Native", "Tailwind CSS", "Node.js", "MySQL"],
+    highlights: [
+  "Created a test plan outlining the testing scope, objectives, approach, and test strategy.",
+  "Designed detailed test cases covering key e-commerce application functionalities.",
+  "Executed functional test cases to verify application behavior and identify defects.",
+  "Documented test results, execution status, and defects to support software quality assurance.",
+],
+    image: QA_manual,
+    github: "https://github.com/KavishkaDevindi/Ecommerce-qa-testing",
+    // live: "#",
+    featured: true,
+  },
+  {
+    id: 2,
     title: "TravelVoyage",
     subtitle: "Web Application",
     category: "Web",
     description:
-      "Web application for exploring Sri Lankan destinations, booking tour packages, and managing travel content through a secure user and admin platform.",
+      "A Sri Lankan travel web application developed using full-stack technologies, featuring destination exploration, tour packages, hotel bookings, and user and admin management. The project also includes QA activities such as manual testing, Selenium UI automation testing, and REST API testing using Postman to verify functionality and improve application quality.",
     stack: ["React Native", "Tailwind CSS", "Node.js", "MySQL"],
-    highlights: [
-      "Explore popular destinations across Sri Lanka and discover detailed travel information.",
-      "Browse and book tour packages based on different travel preferences and requirements.",
-      "Search for and book hotels for convenient accommodation planning.",
-      "Manage travel content through a secure user and admin platform.",
-    ],
+   highlights: [
+  "Developed a responsive travel web application with destination exploration, tour packages, and hotel booking features.",
+  "Implemented frontend and backend functionalities with REST API integration and database management.",
+  "Performed manual testing to verify application functionality and identify defects.",
+  "Developed Selenium UI automation tests to validate key user workflows.",
+  "Conducted REST API testing using Postman to verify API responses and endpoint functionality.",
+  "Identified, documented, and investigated issues to support application quality and reliability."
+],
     image: TravelVoyage,
     github: "https://github.com/KavishkaDevindi/TravelVoyage",
     // live: "#",
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
     title: "Ol_edu_app",
     subtitle: "Mobile App",
     category: "Mobile",
@@ -43,10 +65,10 @@ const projects = [
     image: Ol_edu,
     github: "https://github.com/KavishkaDevindi/Ol_edu_app",
     // live: "#",
-    featured: true,
+    featured: false,
   },
   {
-    id: 3,
+    id: 4,
     title: "ChessyGrill",
     subtitle: "Restaurant reservation system",
     category: "Web",
@@ -64,7 +86,7 @@ const projects = [
     featured: false,
   },
   {
-    id: 4,
+    id: 5,
     title: "SplendEng",
     subtitle: "English resource management platform",
     category: "web",
@@ -84,7 +106,7 @@ const projects = [
 
 ]
 
-const categories = ["All", "Web", "Mobile"]
+const categories = ["All", "Web", "Mobile","QA"]
 
 export default function Projects() {
   const [active, setActive] = useState("All")
@@ -399,7 +421,7 @@ function ProjectCard({
 
         {/* Stack */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1.25rem" }}>
-          {project.stack.map((t) => (
+          {/* {project.stack.map((t) => (
             <span
               key={t}
               style={{
@@ -414,7 +436,7 @@ function ProjectCard({
             >
               {t}
             </span>
-          ))}
+          ))} */}
         </div>
 
         {/* Actions */}
@@ -443,7 +465,7 @@ function ProjectCard({
             Code
           </a> */}
           <a
-  href="https://github.com/KavishkaDevindi"
+  href={project.github}
   target="_blank"
   rel="noopener noreferrer"
   style={{
